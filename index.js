@@ -5,6 +5,7 @@ var $result = document.querySelector('#result')
 var $timeHeader = document.querySelector('#time-header')
 var $resultHeader = document.querySelector('#result-header')
 var $gameTime = document.querySelector('#game-time')
+var $cubeColors = ['red', 'black', 'purple', 'orange', 'green', 'blue', 'yellow', 'white']
 
 var score = 0
 var isGameStarted = false
@@ -86,7 +87,7 @@ function renderBox() {
 
     box.style.height = box.style.width = boxSize + 'px'
     box.style.position = 'absolute'
-    box.style.backgroundColor = '#000'
+    box.style.backgroundColor = setCubeColor()
     box.style.top = getRandom(0, maxTop) + 'px'
     box.style.left = getRandom(0, maxLeft) + 'px'
     box.style.cursor = 'pointer'
@@ -97,4 +98,8 @@ function renderBox() {
 
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
+}
+
+function setCubeColor() {
+    return $cubeColors[Math.floor(Math.random() * $cubeColors.length)] 
 }
