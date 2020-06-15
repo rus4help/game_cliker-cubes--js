@@ -1,0 +1,1 @@
+var $start = document.querySelector('#start')
