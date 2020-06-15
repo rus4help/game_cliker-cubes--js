@@ -11,6 +11,12 @@ function startGame() {
     renderBox()
 }
 
+function handleBoxClick(event) {
+    if(event.target.dataset.box) {
+        renderBox()
+    }
+}
+
 function renderBox() {
     var box = document.createElement('div')
 
@@ -20,6 +26,7 @@ function renderBox() {
     box.style.top = '50px'
     box.style.left = '70px'
     box.style.cursor = 'pointer'
+    box.setAttribute('data-box', 'true')
 
     $game.insertAdjacentElement('afterbegin', box)
 
