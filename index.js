@@ -1,5 +1,6 @@
 var $start = document.querySelector('#start')
 var $game = document.querySelector('#game')
+var $time = document.querySelector('#time')
 
 var score = 0;
 
@@ -11,8 +12,14 @@ function startGame() {
     $start.classList.add('hide')
 
     var interval = setInterval(function() {
-        
-    }, 1000)
+        var time = parseFloat($time.textContent)
+
+        if(time <= 0) {
+            // end game
+        } else {
+            $time.textContent = (time - 0.1).toFixed(1)
+        }
+    }, 100)
 
     renderBox()
 }
