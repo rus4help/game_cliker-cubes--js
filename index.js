@@ -1,6 +1,9 @@
 var $start = document.querySelector('#start')
 var $game = document.querySelector('#game')
 var $time = document.querySelector('#time')
+var $result = document.querySelector('#result')
+var $timeHeader = document.querySelector('#time-header')
+var $resultHeader = document.querySelector('#result-header')
 
 var score = 0
 var isGameStarted = false
@@ -32,6 +35,8 @@ function endGame() {
     $start.classList.remove('hide')
     $game.innerHTML = ''
     $game.style.backgroundColor = '#ccc'
+    $timeHeader.classList.add('hide')
+    $resultHeader.classList.remove('hide')
 }
 
 function handleBoxClick(event) {
