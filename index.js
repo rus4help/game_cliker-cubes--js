@@ -2,6 +2,7 @@ var $start = document.querySelector('#start')
 var $game = document.querySelector('#game')
 
 $start.addEventListener('click', startGame)
+$game.addEventListener('click', handleBoxClick)
 
 function startGame() {
     $game.style.backgroundColor = '#fff'
